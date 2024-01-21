@@ -18,9 +18,9 @@ export const Assignment3 = () => {
   //   return totalValue;
   // }, [items]);
 
-  const totalValue = items.reduce((total, item) => {
-    return (total = total + item.value);
-  }, 0);
+  const totalValue = useMemo(() => {
+    return items.reduce((total, item) => (total = total + item.value), 0);
+  }, [items]);
 
   // // Your code ends here
   return (
